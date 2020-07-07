@@ -6,33 +6,94 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
+    <Button
+        android:id="@+id/feedLikeButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Button"
+        app:layout_constraintStart_toEndOf="@+id/feedRetweetNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tweetBody" />
+
+    <TextView
+        android:id="@+id/feedLikeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="80.5k"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/feedLikeButton" />
+
+    <TextView
+        android:id="@+id/feedRetweetNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="10.3k"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/feedRetweetButton" />
+
+    <Button
+        android:id="@+id/feedReplyButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/feedReplyNumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/tweetBody" />
+
+    <Button
+        android:id="@+id/feedRetweetButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedRetweetNumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/feedReplyNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tweetBody"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/tweetUser"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_weight="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tweetUserHandle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:text="\@StefanNovak96"
+        android:textColor="#8C8C8C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tweetUser" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tweetUser"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileImage"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
@@ -46,10 +107,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
         app:layout_constraintTop_toBottomOf="@+id/tweetUserHandle" />
+
+    <TextView
+        android:id="@+id/feedReplyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="1923"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/feedReplyButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
