@@ -12,7 +12,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
+        android:background="@drawable/like"
         app:layout_constraintStart_toEndOf="@+id/feedRetweetNumber"
         app:layout_constraintTop_toBottomOf="@+id/tweetBody" />
 
@@ -42,7 +42,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
+        android:background="@drawable/reply"
         app:layout_constraintEnd_toStartOf="@+id/feedReplyNumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/profileImage"
@@ -56,7 +56,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:background="@drawable/retweet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/feedRetweetNumber"
         app:layout_constraintHorizontal_bias="0.5"
@@ -100,7 +100,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/presence_online" />
+        app:srcCompat="@drawable/me" />
 
     <TextView
         android:id="@+id/tweetBody"
