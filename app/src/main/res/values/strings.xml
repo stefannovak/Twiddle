@@ -2,4 +2,7 @@
     <string name="app_name">Twiddle</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tweet">Tweet!</string>
+    <string name="tweet_dialog_title">Create a Tweet</string>
 </resources>

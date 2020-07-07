@@ -7,15 +7,25 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter : RecyclerView.Adapter<TweetListViewHolder>() {
 
-    private val tempStrings = arrayOf("Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
-        "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
-        "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan")
+    private val tempStrings = mutableListOf("Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
+        "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
+        "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
+        "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan")
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
     // Each data item is just a string in this case that is shown in a TextView.
     class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+
+    fun addNewItem(tweet: String = "") {
+        if (tweet.isEmpty()) {
+            tempStrings.add("Todo List " + (tempStrings.size + 1))
+        } else {
+            tempStrings.add(tweet)
+        }
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetListViewHolder {
         val view = LayoutInflater.from(parent.context)
