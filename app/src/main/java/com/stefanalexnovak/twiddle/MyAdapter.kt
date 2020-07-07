@@ -3,6 +3,7 @@ package com.stefanalexnovak.twiddle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter : RecyclerView.Adapter<TweetListViewHolder>() {
@@ -12,6 +13,32 @@ class MyAdapter : RecyclerView.Adapter<TweetListViewHolder>() {
         "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan",
         "Stefan", "Stefan", "Stefan", "Stefan", "Stefan", "Stefan")
 
+    private val defaultTweet0 = Tweet("mystdota", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweet1 = Tweet("longtext", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweet2 = Tweet("dreams of peaches", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweet3 = Tweet("edgyguy", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweet4 = Tweet("howaboudat", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweet5 = Tweet("thetrump", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
+    private val defaultTweetList = mutableListOf<Tweet>(defaultTweet0, defaultTweet1, defaultTweet2, defaultTweet3, defaultTweet4, defaultTweet5)
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
@@ -20,9 +47,9 @@ class MyAdapter : RecyclerView.Adapter<TweetListViewHolder>() {
 
     fun addNewItem(tweet: String = "") {
         if (tweet.isEmpty()) {
-            tempStrings.add("Todo List " + (tempStrings.size + 1))
+            println("Invalid Tweet")
         } else {
-            tempStrings.add(tweet)
+            defaultTweetList.add(defaultTweetList.size, Tweet("Stefan Novak", tweet))
         }
         notifyDataSetChanged()
     }
@@ -38,10 +65,13 @@ class MyAdapter : RecyclerView.Adapter<TweetListViewHolder>() {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.listPositionTextView.text = (position + 1).toString()
-        holder.listTitleTextView.text = tempStrings[position]
+//        holder.tweetUserTextView.text = (position + 1).toString()
+//        holder.tweetBodyTextView.text = tempStrings[position]
+
+        holder.tweetUserTextView.text = defaultTweetList[position].user
+        holder.tweetBodyTextView.text = defaultTweetList[position].tweet
     }
 
     // Return the size of your dataset (invoked by the layout manager)
-    override fun getItemCount() = tempStrings.size
+    override fun getItemCount() = defaultTweetList.size
 }
